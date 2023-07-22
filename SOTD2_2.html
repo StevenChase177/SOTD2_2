@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title> SOTD 2_2 </title>
+        <meta charset="UTF-8">
+
+    </head>
+    <body>
+        <p> SOTD week 2 assagiment 2</p>
+        <form>
+            <label for="word1"> noun</label>
+            <input id="word1" type="text">
+            <br>
+            <label for="word2"> peice of clothing </label>
+            <input id="word2" type="text">
+            <br>
+            <label for="word3"> adjective</label>
+            <input id="word3" type="text">
+            <br>
+            <label for="word4"> place</label>
+            <input id="word4" type="text">
+            <br>
+            <label for="word5"> time of day</label>
+            <input  id="word5" type="text">
+            <br>
+            <label for="word6">name</label>
+            <input id="word6" type="text"> 
+            <br>
+            <label for="word7">occupation</label>
+            <input id="word7" type="text">
+            <br>
+            <label for="word8">song</label>
+            <input id="word8" type="text">
+            <br>
+            <label for="word9">color</label>
+            <input id="word9" type="text">
+            <br>
+            <label for="word10">emotion</label>
+            <input id="word10" type="text">
+            <br>
+            <input type="submit" onclick="makeStory(event)">
+        </form>
+        <p id="story"></p>
+        <script>
+            function makeStory(event){
+                // prevents event from making post request 
+                event.preventDefault()
+                // declares variables from form
+                let noun = document.getElementById("word1").value
+
+                let clothing = document.getElementById("word2").value
+
+                let adjective = document.getElementById("word3").value
+
+                let place = document.getElementById("word4").value
+
+                let time = document.getElementById("word5").value
+
+                let name = document.getElementById("word6").value
+
+                let occupation = document.getElementById("word7").value
+
+                let song = document.getElementById("word8").value
+
+                let color = document.getElementById("word9").value
+
+                let emotion = document.getElementById("word10").value
+                // varible story hold string to be written to the document 
+                let story = `welcome ${name} to ${place} it is ${time}. Today ${noun} is celebrating the ${adjective} ${occupation}, eveyone is going to wear ${color} ${clothing} and sing ${song} we hope this make you feel
+                ${emotion}` 
+                // writes story to the document 
+                document.getElementById("story").innerHTML = story
+            }
+        </script>
+    </body>
+</html>
